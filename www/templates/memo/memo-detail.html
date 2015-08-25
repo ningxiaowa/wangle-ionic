@@ -1,0 +1,29 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="编辑备忘" hide-tabs="true">
+    <ion-nav-buttons side="secondary">
+      <button class="button button-icon" ng-click="saveMemo()">
+        更新
+      </button>
+    </ion-nav-buttons>
+  <ion-content>
+  <div class="list">
+    <label class="item item-input">
+      <input ng-model="memo.keyword" type="text" placeholder="主题">
+    </label>
+    <label class="item item-input">
+      <textarea rows="3" ng-model="memo.detail" placeholder="详情"></textarea>
+    </label>
+  </div>
+  <div class="item item-divider">
+    创建于
+    <span class="item-note">
+    {{memo.created_on}} 
+    </span>
+  </div>
+  </ion-content>
+</ion-view>

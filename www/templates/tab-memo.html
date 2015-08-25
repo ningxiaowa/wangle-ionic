@@ -1,0 +1,18 @@
+<ion-view view-title="备忘">
+    <ion-nav-buttons side="secondary">
+    <a ng-if="false" class="button button-icon icon ion-ios-search" href="#/tab/add-memo"></a>
+    <a class="button button-icon icon ion-ios-compose-outline" href="#/tab/add-memo"></a>
+    </ion-nav-buttons>
+  <ion-content has-bouncing="true">
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="memo in memos" type="item-text-wrap" href="#/tab/memo/{{memo.id}}">
+        <h2>{{memo.keyword}}</h2>
+        <p ng-if="memo.detail" >{{memo.detail}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+        <ion-option-button class="button icon-left ion-ios-trash-outline button-assertive" ng-click="remove(memo)">
+          删除
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
